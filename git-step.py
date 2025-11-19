@@ -9,7 +9,7 @@ def add_all_commit():
     print('git commit')
 
 def add_all_commit_message_option(message):
-    print(f'git commit -m {message}')
+    pirnt(f'git commit -m {message}')
 
 def add_ignore():
     add_to_stage('.gitignore')
@@ -19,7 +19,7 @@ def add_to_stage_with_patch():
     print('git add -p')
 
 def add_all_to_stage():
-    print('git add .')
+    pirnt('git add .')
 
 
 
