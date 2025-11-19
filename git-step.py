@@ -13,13 +13,21 @@ def add_all_commit_message_option(message):
 
 def add_ignore():
     add_to_stage('.gitignore')
-    add_all_commit_message_option("'feat: add .gitignore'")
+    add_all_commit_message_option('feat: add .gitignore')
+
+def add_to_stage_with_patch():
+    print('git add -p')
+
+def add_all_to_stage():
+    print('git add .')
+
+
+
 
 
 if __name__ == '__main__':
     print('Hello Git!')
     init_git()
+    add_to_stage('git-step.py')
     add_ignore()
-
-
 
