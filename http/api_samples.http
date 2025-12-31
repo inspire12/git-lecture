@@ -1,0 +1,107 @@
+### Fake LLM Agent API 테스트 샘플
+
+@baseUrl = http://localhost:8000
+
+###
+# OpenAI 스타일 API - 간단한 인사
+POST {{baseUrl}}/chat/completions
+Content-Type: application/json
+
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "안녕하세요!"
+    }
+  ],
+  "temperature": 0.7,
+  "max_tokens": 100
+}
+
+###
+# OpenAI 스타일 API - 이름 질문
+POST {{baseUrl}}/chat/completions
+Content-Type: application/json
+
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "당신의 이름은 무엇인가요?"
+    }
+  ],
+  "temperature": 0.7,
+  "max_tokens": 100
+}
+
+###
+# OpenAI 스타일 API - 날씨 질문
+POST {{baseUrl}}/chat/completions
+Content-Type: application/json
+
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "오늘 날씨가 어때요?"
+    }
+  ],
+  "temperature": 0.7,
+  "max_tokens": 100
+}
+
+###
+# OpenAI 스타일 API - 대화형 예시 (여러 메시지)
+POST {{baseUrl}}/chat/completions
+Content-Type: application/json
+
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "안녕하세요!"
+    },
+    {
+      "role": "assistant",
+      "content": "안녕하세요! 무엇을 도와드릴까요?"
+    },
+    {
+      "role": "user",
+      "content": "Python에 대해 알려주세요"
+    }
+  ],
+  "temperature": 0.5,
+  "max_tokens": 150
+}
+
+###
+# OpenAI 스타일 API - 높은 temperature 설정
+POST {{baseUrl}}/chat/completions
+Content-Type: application/json
+
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "창의적인 이야기를 들려주세요"
+    }
+  ],
+  "temperature": 1.0,
+  "max_tokens": 200
+}
+
+###
+# OpenAI 스타일 API - 낮은 temperature 설정
+POST {{baseUrl}}/chat/completions
+Content-Type: application/json
+
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "프로그래밍에 대해 설명해주세요"
+    }
+  ],
+  "temperature": 0.1,
+  "max_tokens": 100
+}

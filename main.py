@@ -37,10 +37,13 @@ fake_responses = [
 async def root():
     return {"message": "Fake LLM Agent API입니다. /docs로 가서 API를 확인해보세요!"}
 
+class SimpleRequest(BaseModel):
+    message: str
+
 @app.post("/chat/simple", response_model=SimpleResponse)
-async def simple_chat(message: str):
+async def simple_chat(request: SimpleRequest):
     response = random.choice(fake_responses)
-    return SimpleResponse(response=f"{response} (입력: '{message}')")
+    return SimpleResponse(response=f"{response} (입력: '{request.message}')")
 
 @app.post("/chat/completions", response_model=ChatResponse)
 async def chat_completions(request: ChatRequest):
